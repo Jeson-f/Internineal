@@ -1,0 +1,125 @@
+/* Welcome to Compass. In this file you should write your main styles. (or centralize your imports) Import this file using the following HTML or equivalent: <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+
+audio, canvas, progress, video { display: inline-block; vertical-align: baseline; }
+
+audio:not([controls]) { display: none; height: 0; }
+
+[hidden], template { display: none; }
+
+/*! normalize.css v3.0.0 | Base | MIT License | git.io/normalize */
+html { font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body { margin: 0; }
+
+/*! normalize.css v3.0.0 | Links | MIT License | git.io/normalize */
+a { background: transparent; }
+
+a:active, a:hover { outline: 0; }
+
+/*! normalize.css v3.0.0 | Typography | MIT License | git.io/normalize */
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+h1 { font-size: 2em; margin: 0.67em 0; }
+
+mark { background: #ff0; color: #000; }
+
+small { font-size: 80%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+/*! normalize.css v3.0.0 | Embedded Content | MIT License | git.io/normalize */
+img { border: 0; }
+
+svg:not(:root) { overflow: hidden; }
+
+/*! normalize.css v3.0.0 | Figures | MIT License | git.io/normalize */
+figure { margin: 1em 40px; }
+
+hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
+
+pre { overflow: auto; }
+
+code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }
+
+/*! normalize.css v3.0.0 | Forms | MIT License | git.io/normalize */
+button, input, optgroup, select, textarea { color: inherit; font: inherit; margin: 0; }
+
+button { overflow: visible; }
+
+button, select { text-transform: none; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
+
+button[disabled], html input[disabled] { cursor: default; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+input { line-height: normal; }
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { height: auto; }
+
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+
+legend { border: 0; padding: 0; }
+
+textarea { overflow: auto; }
+
+optgroup { font-weight: bold; }
+
+/*! normalize.css v3.0.0 | Tables | MIT License | git.io/normalize */
+table { border-collapse: collapse; border-spacing: 0; }
+
+td, th { padding: 0; }
+
+body * { box-sizing: border-box; }
+
+.container { width: 1170px; margin: 0 auto; }
+
+.footer { display: none !important; }
+
+.Int-Head { height: 121px !important; background: white; }
+.Int-Head .Int-Head-langue { padding-top: 20px; text-align: right; }
+.Int-Head .Int-Head-langue span { padding: 0 10px; }
+.Int-Head .Int-Head-langue a { display: inline-block; font-size: 16px; color: #ff6b17; vertical-align: middle; }
+.Int-Head .Int-Head-langue a:first-child { color: #111111; }
+.Int-Head .Int-Head-Nav dl { display: flex; height: 80px; line-height: 80px; font-size: 18px; }
+.Int-Head .Int-Head-Nav dl dt { width: 170px; text-align: center; margin-right: 20px; }
+.Int-Head .Int-Head-Nav dl dd { position: relative; }
+.Int-Head .Int-Head-Nav dl dd.active i { display: inline-block; height: 4px; background-color: #111111; width: 100%; position: absolute; bottom: 0; }
+
+#section0 { background: url("../images/section0-Bg.jpg") center no-repeat; -webkit-background-size: cover; background-size: cover; }
+#section0 h1, #section0 h2, #section0 h3, #section0 span { color: #111111; }
+#section0 h1 { padding-top: 80px; font-size: 50px; color: #111111; }
+#section0 h2 { font-size: 32px; }
+#section0 h3 { font-size: 24px; }
+#section0 span { text-align: left; display: inline-block; font: normal lighter 24px "Microsoft YaHei UI", sans-serif; margin: 20px 0; }
+#section0 p a { color: white; font: normal lighter 18px "Microsoft YaHei UI", sans-serif; margin: 20px 0; width: 225px; height: 45px; line-height: 45px; display: inline-block; background-color: #111111; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; }
+#section0 img { height: 400px; }
+
+#section1 .title { margin-bottom: 20px; }
+#section1 .title h1 { margin: 0.67em 0 0; }
+#section1 .title p { color: #0c0d0e; font: normal lighter 21px "Microsoft YaHei UI", sans-serif; }
+#section1 ul { display: flex; }
+#section1 ul li { margin: 0 25px; width: 370px; border: 1px solid #d2d2d2; }
+#section1 ul li .head { height: 222px; background-color: #fed450; }
+#section1 ul li .body { padding: 0 35px; }
+#section1 ul li .body span { text-align: left; display: block; padding-bottom: 40px; }
+
+/*# sourceMappingURL=screen.css.map */

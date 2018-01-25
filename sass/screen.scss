@@ -1,0 +1,147 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "normalize", "variable";
+
+body {
+  * {
+    box-sizing: $bdbx;
+  }
+}
+.container {
+  width: $container;
+  margin: 0 $auto;
+}
+
+.footer {
+  display: none !important;
+}
+
+.Int-Head {
+  height: 121px !important;
+  background: white;
+  .Int-Head-langue {
+    padding-top: 20px;
+    text-align: $r;
+    span {
+      padding: 0 10px;
+    }
+    a {
+      display: $ib;
+      font-size: $fz16;
+      color: #ff6b17;
+      vertical-align: middle;
+      &:first-child {
+        color: $fotCorDir;
+      }
+    }
+  }
+  .Int-Head-Nav {
+    dl {
+      display: flex;
+      height: 80px;
+      line-height: 80px;
+      font-size: $fz18;
+      dt {
+        width: 170px;
+        text-align: $c;
+        margin-right: 20px;
+      }
+      dd {
+        position: relative;
+        &.active {
+          i {
+            display: $ib;
+            height: 4px;
+            background-color: $fotCorDir;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+#section0 {
+  background: url("../images/section0-Bg.jpg") center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  h1, h2, h3, span {
+    color: $fotCorDir;
+  }
+  h1 {
+    padding-top: 80px;
+    font-size: $titfz;
+    color: $fotCorDir;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  span {
+    text-align: left;
+    display: $ib;
+    font:normal lighter 24px $YaHei;
+    margin: 20px 0;
+  }
+  p {
+    a {
+      color: white;
+      font:normal lighter 18px $YaHei;
+      margin: 20px 0;
+      width: 225px;
+      height: 45px;
+      line-height: 45px;
+      display: $ib;
+      background-color: $fotCorDir;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+    }
+  }
+  img{
+    height: 400px;
+  }
+}
+#section1 {
+  .title{
+    margin-bottom: 20px;
+    h1{
+      margin: 0.67em 0 0;
+    }
+    p{
+      color: #0c0d0e;
+      font:normal lighter 21px $YaHei;
+    }
+  }
+  ul{
+    display: flex;
+    li{
+      margin: 0 25px;
+      width: 370px;
+      border: 1px solid #d2d2d2;
+      .head{
+        height: 222px;
+        background-color: #fed450;
+        dt{}
+        dd{}
+      }
+      .body{
+        padding: 0 35px;
+        h1{}
+        span{text-align: $l;
+          display: block;
+          padding-bottom: 40px;}
+      }
+    }
+  }
+}
+
+
+
+
