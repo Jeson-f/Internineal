@@ -88,13 +88,22 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 td, th { padding: 0; }
 
+body { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; height: 100%; min-height: 100vh; }
 body * { box-sizing: border-box; }
+
+main { overflow: hidden; clear: both; -webkit-box-flex: 1; -ms-flex: 1 0 auto; flex: 1 0 auto; background: #f1f5f8; }
+
+main::before, main::after { content: ""; display: block; height: 0; overflow: hidden; }
+
+main::after { clear: both; }
+
+main { zoom: 1; }
 
 .container { width: 1170px; margin: 0 auto; }
 
 .footer { display: none !important; }
 
-.Int-Head { height: 121px !important; background: white; }
+.Int-Head { height: 121px !important; background: rgba(255, 255, 255, 0.9); z-index: 9999999; }
 .Int-Head .Int-Head-langue { padding-top: 20px; text-align: right; }
 .Int-Head .Int-Head-langue span { padding: 0 10px; }
 .Int-Head .Int-Head-langue a { display: inline-block; font-size: 16px; color: #ff6b17; vertical-align: middle; }
@@ -106,20 +115,20 @@ body * { box-sizing: border-box; }
 
 #section0 { background: url("../images/section0-Bg.jpg") center no-repeat; -webkit-background-size: cover; background-size: cover; }
 #section0 h1, #section0 h2, #section0 h3, #section0 span { color: #111111; }
-#section0 h1 { padding-top: 80px; font-size: 50px; color: #111111; }
+#section0 h1 { color: #111111; font: normal bold 50px "Microsoft YaHei UI", sans-serif; }
 #section0 h2 { font-size: 32px; }
 #section0 h3 { font-size: 24px; }
-#section0 span { text-align: left; display: inline-block; font: normal lighter 24px "Microsoft YaHei UI", sans-serif; margin: 20px 0; }
+#section0 span { text-align: left; display: inline-block; font: normal lighter 26px "Microsoft YaHei UI", sans-serif; margin: 20px 0; }
 #section0 p a { color: white; font: normal lighter 18px "Microsoft YaHei UI", sans-serif; margin: 20px 0; width: 225px; height: 45px; line-height: 45px; display: inline-block; background-color: #111111; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; }
-#section0 img { height: 400px; }
 
 #section1 .title { margin-bottom: 20px; }
-#section1 .title h1 { margin: 0.67em 0 0; }
+#section1 .title h1 { margin: 0.67em 0 0; font: normal bold 50px "Microsoft YaHei UI", sans-serif; color: #111111; }
 #section1 .title p { color: #0c0d0e; font: normal lighter 21px "Microsoft YaHei UI", sans-serif; }
 #section1 ul { display: flex; }
-#section1 ul li { margin: 0 25px; width: 370px; border: 1px solid #d2d2d2; }
+#section1 ul li { margin: 0 15px; width: 370px; border: 1px solid #d2d2d2; }
 #section1 ul li .head { height: 222px; background-color: #fed450; }
-#section1 ul li .body { padding: 0 35px; }
+#section1 ul li .body { padding: 0 20px; }
+#section1 ul li .body h1 { text-transform: uppercase; font: normal normal 28px "Microsoft YaHei UI", sans-serif; }
 #section1 ul li .body span { text-align: left; display: block; padding-bottom: 40px; }
 
 /*# sourceMappingURL=screen.css.map */
