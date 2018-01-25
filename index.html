@@ -5,6 +5,7 @@
 	<title>Title</title>
 	<link href="https://cdn.bootcss.com/fullPage.js/2.9.5/jquery.fullpage.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="stylesheets/examples.css">
+	<link rel="stylesheet" href="stylesheets/idangerous.swiper.css">
 	<link rel="stylesheet" href="stylesheets/screen.css">
 	<script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
 	<script src="https://cdn.bootcss.com/jqueryui/1.9.1/jquery-ui.min.js"></script>
@@ -12,23 +13,30 @@
 	<script src="javascript/hc-sticky.js"></script>
 	<script src="https://cdn.bootcss.com/fullPage.js/2.9.5/jquery.fullpage.min.js"></script>
 	<script src="javascript/examples.js"></script>
+	<link href="https://cdn.bootcss.com/video.js/6.6.3/alt/video-js-cdn.min.css" rel="stylesheet">
+	<!-- If you'd like to support IE8 -->
+	<script src="https://cdn.bootcss.com/video.js/6.6.3/ie8/videojs-ie8.min.js"></script>
 	<script type="text/javascript">
         $(document).ready(function () {
             $('#fullpage').fullpage({
-                autoScrolling: false,
-                sectionsColor: ['#fcc105', '#fff', '#f2f2f2', '#ffffff', '#434241', '#ffffff', '#434241', '#ffffff', '#28292b'],
-                anchors: ['Home', 'Prime-Product', 'Business-College', 'Promotional-Film', 'Copartner', 'Cooperation', 'About-Us'],
-                menu: '#menu'
+                autoScrolling: false, /*正常滚动,显示滚动条*/
+                fitToSection: false, /*禁止自动适应一屏,可随时停留*/
+                sectionsColor: ['#0092dc', '#fff', '#f2f2f2', '#ffffff', '#434241', '#ffffff', '#434241', '#ffffff', '#28292b'], /*每屏的背景颜色*/
+                anchors: ['Home', 'Prime-Product', 'Business-College', 'Promotional-Film', 'Copartner', 'Cooperation', 'About-Us'], /*定义导航锚点的链接*/
+                menu: '#menu'/*导航框架ID*/
             });
         });
 	</script>
 </head>
 <body>
+<!--主体框架-->
 <main>
 	<nav id="menu" class="Int-Head">
-		<div class="container">
-			<div class="Int-Head-langue"><a href="http://www.vmxiang.com">中国站</a><span>|</span><a href="http://en.vmxiang.com">Internineal</a></div>
-			<div class="Int-Head-Nav">
+		<div class="Int-Head-langue">
+			<div class="container"><a href="http://www.vmxiang.com">中国站</a><span>|</span><a href="http://en.vmxiang.com">Internineal</a></div>
+		</div>
+		<div class="Int-Head-Nav">
+			<div class="container">
 				<dl>
 					<dt><img src="images/logo.png" alt="ZHONG CHUANG SI WEI"></dt>
 					<dd data-menuanchor="Home"><a href="#Home">Home</a><i></i></dd>
@@ -43,7 +51,9 @@
 			</div>
 		</div>
 	</nav>
+	<!--fullpage 滚动效果框架-->
 	<div id="fullpage">
+		<!--网页内容开始-->
 		<div id="section0" class="section fp-auto-height">
 			<h1>PARTNER</h1>
 			<h2>“One city one station” partner.</h2>
@@ -51,14 +61,16 @@
 			<h3>Let entrepreneurs no longer alone.</h3>
 			<p><a target="_blank" href="http://p.qiao.baidu.com/cps/chat?siteId=10874303&userId=24028025">JOIN IN NOW ></a></p><img src="images/partner.png" alt="PARTNER"></div>
 		<div id="section1" class="section fp-auto-height">
-			<div class="container"><div class="title">
-				<h1>Prime Product</h1>
-				<p>Integrate resources and provide one-stop service solutions</p></div>
+			<div class="container">
+				<div class="Int-title">
+					<h1>Prime Product</h1>
+					<p>Integrate resources and provide one-stop service solutions</p>
+				</div>
 				<ul>
 					<li>
 						<div class="head">
 							<dl>
-								<dt><img src="" alt="Wise people will not choose to wait and see"></dt>
+								<dt><img src="images/Product-list-img-1.png" alt="Wise people will not choose to wait and see"></dt>
 								<dd>Wise people will not choose to<br>wait and see</dd>
 							</dl>
 						</div>
@@ -69,7 +81,7 @@
 					<li>
 						<div class="head">
 							<dl>
-								<dt><img src="" alt="Let entrepreneurs no longer alone"></dt>
+								<dt><img src="images/Product-list-img-2.png" alt="Let entrepreneurs no longer alone"></dt>
 								<dd>Let entrepreneurs no longer alone</dd>
 							</dl>
 						</div>
@@ -80,7 +92,7 @@
 					<li>
 						<div class="head">
 							<dl>
-								<dt><img src="" alt="Create infinite possibilities for you and your product"></dt>
+								<dt><img src="images/Product-list-img-3.png" alt="Create infinite possibilities for you and your product"></dt>
 								<dd>Create infinite possibilities for you <br>and your product</dd>
 							</dl>
 						</div>
@@ -88,26 +100,160 @@
 							<h1>Entrepreneur Club</h1>
 							<span>Complete and successful self-media operation experience, marketing planning package package Output through the media platform for thinking omembers or members of the product packaging, dissemination to join a highend entrep-reneurial circle, to expand the circle of contacts</span></div>
 					</li>
-				</ul></div>
+				</ul>
+			</div>
 		</div>
-		<div id="section2" class="section fp-auto-height"></div>
-		<div id="section3" class="section fp-auto-height"></div>
-		<div id="section4" class="section fp-auto-height"></div>
-		<div id="section5" class="section fp-auto-height"></div>
-		<div id="section6" class="section fp-auto-height"></div>
-		<div id="section7" class="section fp-auto-height"></div>
+		<div id="section2" class="section fp-auto-height">
+			<div class="container clear">
+				<div class="Int-title">
+					<h1>Zhong Chuang Business College</h1>
+					<p>Quickly filter the courses you need to improve your marketing skills.</p>
+				</div>
+				<!--第3屏的手机轮播效果-->
+				<div class="Int-PhoneShow_Left fl">
+					<div class="device">
+						<a class="icons-arrows-left" href="#"></a>
+						<a class="icons-arrows-Right" href="#"></a>
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><img src="images/Phone_1.png"></div>
+								<div class="swiper-slide"><img src="images/Phone_2.png"></div>
+							</div>
+						</div>
+					</div>
+					<div class="pagination"></div>
+				</div>
+				<div class="Partition-Ico fl"><img src="images/Partition-Ico.png" alt="Partition-Ico"></div>
+				<div class="Int-BusCont-Rig fl">
+					<dl>
+						<dt><h3>Good class free time limit</h3></dt>
+						<dd><i class="icons-arrow"></i><span>How headline weight loss, and was recommended by the platform (practical operation)</span></dd>
+						<dd><i class="icons-arrow"></i><span>How to get quality material from media creators</span></dd>
+						<dd><i class="icons-arrow"></i><span>Writing difficult? Pseudo-original simplest three methods</span></dd>
+						<dd><i class="icons-arrow"></i><span>Various ways of downloading internet video material</span></dd>
+					</dl>
+					<div class="Int-BusCont-Rig-Fot"><p>Since the media dry goods<br>Netting out</p><span>Thank you for your attention</span></div>
+				</div>
+			</div>
+		</div>
+		<div id="section3" class="section fp-auto-height">
+			<div class="Int-title">
+				<h1>Promotional film for Zong Chuang Siwei</h1>
+				<p>ZhongChuangSiWei - Changing the World with the Power of Thought</p>
+			</div>
+
+			<div class="Video-Frame">
+				<video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="812" height="508"
+				       poster="images/PartnerCover.jpg" data-setup="{}">
+					<source src="http://vmxiang-file.oss-cn-shenzhen.aliyuncs.com/video/Partner.webm" type='video/webm'>
+					<source src="http://vmxiang-file.oss-cn-shenzhen.aliyuncs.com/video/Partner.mp4" type='video/mp4'>
+					<p class="vjs-no-js">
+						To view this video please enable JavaScript, and consider upgrading to a web browser that
+						<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+					</p>
+				</video>
+			</div>
+		</div>
+
+		<div id="section4" class="section fp-auto-height">
+			<img src="images/PARTNER-4.jpg" alt="PARTNER" class="img-responsive">
+		</div>
+		<div id="section5" class="section fp-auto-height">
+			<div class="Int-title">
+				<h1>Partners</h1>
+				<p>Let Entrepreneurs No Longer Alone</p>
+			</div>
+			<div class="container">
+				<img src="images/section5-icons.jpg" alt="Partners" class="img-responsive">
+			</div>
+		</div>
+		<div id="section6" class="section fp-auto-height">
+			<img src="images/AboutUs.jpg" alt="AboutUs" class="img-responsive"></div>
+		<div id="section7" class="section fp-auto-height">
+			<p class="section7_text">Venture on the road very happy to walk with you...</p>
+			<!--todo//问题代码-->
+			<!--<footer class="Int-fot">
+				<div class="container clear">
+					<div class="Int-fot-left fl">
+						<ul>
+							<li class="Int-fot-left_logo"><img src="images/logo1.png" alt="logo"></li>
+							<li class="Int-fot-left_about us">
+								<dl>
+									<dt>about us</dt>
+									<dd>partner</dd>
+									<dd>Business College</dd>
+								</dl>
+							</li>
+							<li class="Int-fot-left_MemberCentre">
+								<dl>
+									<dt>Member Centre</dt>
+									<dd>Wisdom member</dd>
+									<dd>Entrepreneur Club</dd>
+									<dd>Pay for Knowledge</dd>
+								</dl>
+							</li>
+							<li class="Int-fot-left_BusinessCooperation">
+								<dl>
+									<dt>Business Cooperation</dt>
+									<dd><i class="icons-tel"></i>0755-89937800</dd>
+									<dd><i class="icons-marketing"></i>134 3050 4151</dd>
+									<dd><i class="icons-gy_qq"></i>4008938208</dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="Int-fot-right fr">
+						<table>
+							<caption>TELL US YOUR NEEDS</caption>
+							<tr>
+								<td><input type="text" placeholder="UserName"></td>
+								<td rowspan="2"><textarea  autofocus  placeholder="Please Enter Your Message"></textarea></td>
+							</tr>
+							<tr>
+								<td><input type="text" placeholder="E-mail"></td>
+							</tr>
+							<tr>
+								<td><a href="#" class="form-button">Send Along</a></td>
+								<td><p>We will reply as soon as possible and the <br> information will be kept confidential.</p></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</footer>-->
+			<div class="page-footer"><span>
+				Copyright;&nbsp;&nbsp;©2015-2018 &nbsp;&nbsp;<strong><a href="http://en.vmxiang.com">Zhong Chuang Si Wei</a></strong> &nbsp;&nbsp; Powered by Zhong Chuang Si Wei! &nbsp;&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">( 粤ICP备15026570号-1 )</a>
+			</span></div>
+		</div>
 	</div>
 </main>
+<script src="javascript/idangerous.swiper.js"></script>
+<script src="https://cdn.bootcss.com/video.js/6.6.3/alt/video.novtt.min.js"></script>
 <script>
     "use strict";
     var Sticky = new hcSticky('nav', {
-        stickTo: 'main',
+        stickTo: 'body',
         queries: {
             980: {
                 disable: true
             }
         }
     });
+    var mySwiper = new Swiper('.swiper-container', {
+        pagination: '.pagination',
+        loop: true,
+        grabCursor: true,
+        paginationClickable: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    });
+    $('.icons-arrows-left').on('click', function (e) {
+        e.preventDefault();
+        mySwiper.swipePrev()
+    });
+    $('.icons-arrows-Right').on('click', function (e) {
+        e.preventDefault();
+        mySwiper.swipeNext()
+    })
 </script>
 </body>
 </html>

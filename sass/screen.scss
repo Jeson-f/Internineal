@@ -2,8 +2,8 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-@import "normalize", "variable";
-
+@import "normalize", "variable", "sprites";
+//锁定导航栏必须样式
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18,42 +18,91 @@ body {
     box-sizing: $bdbx;
   }
 }
+
 main {
   overflow: hidden;
   clear: both;
   -webkit-box-flex: 1;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
+  -ms-flex: 1 0 $auto;
+  flex: 1 0 $auto;
   background: #f1f5f8;
+  zoom: 1;
+  &::after {
+    clear: both;
+  }
 }
+
 main::before, main::after {
   content: "";
   display: block;
   height: 0;
   overflow: hidden;
 }
-main::after {
-  clear: both;
-}
-main {
-  zoom: 1;
-}
+
+//1170px宽度居中样式,
 .container {
   width: $container;
   margin: 0 $auto;
 }
 
+//隐藏导航栏footer
 .footer {
   display: none !important;
 }
 
+//清除浮动
+.clear {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+//左右浮动
+.fl {
+  float: $l;
+}
+
+.fr {
+  float: $r;
+}
+
+//响应式图片
+.img-responsive {
+  height: $auto;
+  max-width: 100%;
+  display: $ib;
+  margin: 0 $auto;
+}
+
+//每一屏的标题模块
+.Int-title {
+  margin-bottom: 20px;
+  //第2屏主标题
+  h1 {
+    margin: 0.67em 0 0;
+    font: normal bold $titfz "Microsoft YaHei UI", sans-serif;
+    color: $fotCorDir;
+  }
+  //第2屏副标题
+  p {
+    color: #0c0d0e;
+    font: normal lighter 21px "Microsoft YaHei UI", sans-serif;
+  }
+}
+
+//头部
 .Int-Head {
-  height: 121px !important;
+  height: 120px;
   background: rgba(255, 255, 255, 0.9);
   z-index: 9999999;
+  //语言版本选择
   .Int-Head-langue {
-    padding-top: 20px;
+    height: 40px;
+    line-height: 40px;
     text-align: $r;
+    background: #f9f9f9;
+    border-#{$b}: $bdstyle #e6e6e6;
+    transition: all .2s;
     span {
       padding: 0 10px;
     }
@@ -67,19 +116,32 @@ main {
       }
     }
   }
+  //导航
   .Int-Head-Nav {
     dl {
-      display: flex;
+      &:after {
+        content: " ";
+        display: table;
+        clear: both;
+      }
       height: 80px;
       line-height: 80px;
       font-size: $fz18;
+      //Logo图标
       dt {
+        float: $l;
         width: 170px;
         text-align: $c;
         margin-right: 20px;
+        img {
+          vertical-align: middle;
+        }
       }
+      //文字导航模块
       dd {
+        float: $l;
         position: relative;
+        //选中模块的下划线效果
         &.active {
           i {
             display: $ib;
@@ -95,33 +157,47 @@ main {
   }
 }
 
+//滚动页面后隐藏语言选择模块
+.sticky {
+  height: 80px;
+  line-height: 80px;
+  .Int-Head-langue {
+    margin-top: -40px;
+  }
+}
+
+//第1屏
 #section0 {
-  background: url("../images/section0-Bg.jpg") center no-repeat;
+  //第1屏背景图
+  /*background: url("../images/section0-Bg.jpg") $c no-repeat;*/
+  //第1屏背景图片自适应该模块尺寸
   -webkit-background-size: cover;
   background-size: cover;
-  h1, h2, h3, span {
-    color: $fotCorDir;
-  }
+  //第1屏主标题
   h1 {
     color: $fotCorDir;
-    font:normal bold $titfz $YaHei;
+    font: normal bold $titfz "Microsoft YaHei UI", sans-serif;
   }
+  //第1屏副标题
   h2 {
-    font-size: 32px;
+    font-size: $fz32;
   }
+  //第1屏内容
   h3 {
     font-size: 24px;
   }
+  //第1屏二级副标题
   span {
-    text-align: left;
+    text-align: $l;
     display: $ib;
-    font:normal lighter 26px $YaHei;
+    font: normal lighter 26px "Microsoft YaHei UI", sans-serif;
     margin: 20px 0;
   }
+  //第1屏按钮
   p {
     a {
       color: white;
-      font:normal lighter 18px $YaHei;
+      font: normal lighter $fz18 "Microsoft YaHei UI", sans-serif;
       margin: 20px 0;
       width: 225px;
       height: 45px;
@@ -134,44 +210,308 @@ main {
     }
   }
 }
+
+//第1屏的所有字体颜色样式
+#section0 h1, #section0 h2, #section0 h3, #section0 span {
+  color: white;
+}
+
+//第2屏
 #section1 {
-  .title{
-    margin-bottom: 20px;
-    h1{
-      margin: 0.67em 0 0;
-      font:normal bold $titfz $YaHei;
-      color: $fotCorDir;
-    }
-    p{
-      color: #0c0d0e;
-      font:normal lighter 21px $YaHei;
-    }
-  }
-  ul{
-    display: flex;
-    li{
-      margin: 0 15px;
+  padding-bottom: 60px;
+  //第2屏3个内容模块
+  ul {
+    //第2屏单个内容模块的样式
+    li {
+      float: $l;
+      margin: 0 8px;
       width: 370px;
       border: 1px solid #d2d2d2;
-      .head{
+      //清除浮动对后面模块的影响
+      &:after {
+        content: " ";
+        display: table;
+        clear: both;
+      }
+      //第2屏上半部分模块
+      .head {
         height: 222px;
         background-color: #fed450;
-        dt{}
-        dd{}
+        dt {
+          padding-top: 35px;
+        }
+        dd {
+          padding-top: 15px;
+          font: normal lighter 20px/1.2 $YaHei;
+          color: $fotCorDir;
+        }
       }
-      .body{
-        padding: 0 20px;
-        h1{
+      //第2屏下半部分模块
+      .body {
+        padding: 10px 20px;
+        height: 350px;
+        //第2屏下半部分的标题
+        h1 {
           text-transform: $uppercase;
-          font:normal normal 28px $YaHei;}
-        span{text-align: $l;
+          font: normal normal 28px "Microsoft YaHei UI", sans-serif;
+        }
+        //第2屏下半部分的内容
+        span {
+          text-align: $l;
           display: block;
-          padding-bottom: 40px;}
+          padding-bottom: 40px;
+          font: normal lighter #{$fz18}/1.4 normal;
+          color: $fotCorDir;
+        }
       }
     }
   }
 }
 
+//第3屏
+#section2 {
+  .Int-title {
+    padding: 42px 0;
+  }
+  .Int-PhoneShow_Left {
+    position: relative;
+  }
+  .Partition-Ico {
+    margin: 0 100px;
+  }
+  .Int-BusCont-Rig {
+    width: 400px;
+    dt {
+      h3 {
+        font: normal normal 30px/1.2 $YaHei;
+        color: $fotCorDir;
+        text-transform: $capitalize;
+        margin-bottom: 42px;
+      }
+    }
+    dd {
+      padding-right: 85px;
+      font: normal normal 16px/1.2 $YaHei;
+      color: #808b8d;
+      text-align: $l;
+      padding-bottom: 65px;
+      i {
+        width: 30px;
+        height: 17px;
+        display: $ib;
+      }
+      span {
+        display: $ib;
+        vertical-align: middle;
+        width: 275px;
+      }
+    }
+  }
+  .Int-BusCont-Rig-Fot {
+    p {
+      text-align: $l;
+      font: normal normal 18px/1.2 normal;
+      color: #2d3e50;
+      text-transform: $capitalize;
+      background: url(../images/Cloud.png) left no-repeat;
+      padding-left: 65px;
+    }
+    span {
+      text-align: $l;
+      display: $b;
+      font: normal normal 16px/1.2 normal;
+      color: $fotCorDir;
+      text-transform: $capitalize;
+      &:before {
+        content: "";
+        display: $b;
+        height: 3px;
+        background-color: #2d3e50;
+        width: 80%;
+        margin: 15px 0;
+      }
+    }
+  }
+}
 
+//手机模型轮播样式
+.device {
+  width: 421px;
+  height: 603px;
+  padding: 30px 40px;
+  border-radius: 20px;
+  margin: 5px $auto 50px;
+  position: relative;
+  background: url(../images/Phone.png) 0 0 no-repeat;
+  .icons-arrows-left {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -15px;
+    width: 17px;
+    height: 30px;
+  }
+  .icons-arrows-Right {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -15px;
+    width: 17px;
+    height: 30px;
+  }
+}
 
+.swiper-container {
+  height: 423px;
+  width: 249px;
+  top: 58px;
+}
 
+.content-slide {
+  padding: 20px;
+  color: #fff;
+}
+
+.pagination {
+  position: absolute;
+  left: 0;
+  text-align: $c;
+  bottom: 5px;
+  width: 100%;
+  padding: 25px 0;
+}
+
+.swiper-pagination-switch {
+  display: $ib;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #999;
+  box-shadow: 0 1px 2px #555 inset;
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+.swiper-active-switch {
+  background: #fff;
+}
+
+//第4屏
+#section3 {
+  .Video-Frame {
+    background: #fff url(../images/mac.jpg) center no-repeat;
+    width: 1064px;
+    height: 609px;
+    margin: 40px $auto;
+    .video-js {
+      width: 812px;
+      height: 508px;
+      left: 50%;
+      margin-left: -406px;
+      top: 30px;
+    }
+  }
+}
+
+//第6屏
+#section5{
+  .Int-title{
+    padding-top: 60px;
+  }
+  img{
+    margin: 70px 0 125px;
+  }
+}
+
+//第8屏
+#section7{
+  .section7_text{
+    text-align: $c;
+    padding: 200px 0;
+    margin: 0 $auto;
+    font: normal bold 24px/1.2 $YaHei;
+    color: #232223;
+    text-transform: $capitalize;
+  }
+  .Int-fot{
+    padding: 50px 0;
+    background-color: #28292b;
+    .Int-fot-left{
+      ul{
+        li{
+          float: left;
+          padding-right: 30px;
+          &:first-child{
+            padding-right: 50px;
+          }
+          dl{
+            text-align: $l;
+            color: #ffffff;
+            dt{
+              font: normal 18px/2.5 $YaHei;
+            }
+            dd{
+              i{
+                display: $ib;
+                margin-right: 8px;
+              }
+              font: normal lighter 16px/2.5 $YaHei;
+            }
+          }
+        }
+      }
+    }
+    .Int-fot-right{
+      text-align: left;
+      caption{
+        font: normal 18px/1.2 $YaHei;
+        color: #e35f13;
+        margin-bottom: 10px;
+      }
+      input{
+        width: 160px;
+        height: 33px;
+        border: none;
+        text-indent: 1em;
+      }
+      textarea{
+        overflow-x:hidden;overflow-y:hidden;
+        width: 240px;
+        height: 70px;
+        border: none;
+        text-indent: 1em;
+        margin-left: 20px;
+      }
+      a{
+        width: 100%;
+        height: 40px;
+        line-height: 35px;
+        background-color: #e35f13;
+        border-bottom: 3px solid #6f2d06;
+        display: $b;
+        color: #ffffff;
+        margin-top: 15px;
+        text-align: $c;
+      }
+      p{
+        color: white;
+        font: normal lighter 13px/1.2 normal;
+        padding: 15px 0 0 20px;
+      }
+    }
+  }
+  .page-footer{
+    background-color: #262729;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    span,a{
+      display: $ib;
+      color: #eeeeee;
+      font: normal 12px/1.2 normal;
+    }
+    a{
+      font-weight: bold;
+    }
+  }
+}
